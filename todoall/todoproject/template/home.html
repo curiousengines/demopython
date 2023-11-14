@@ -1,0 +1,51 @@
+{%extends 'base.html'%}
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="banner">
+                <div class="banner-text">
+                    <h1>ToDo</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" style="align-self: center;  margin-top: 30px;">
+    <div class="row">
+        <div class="col-md-6">
+            <form method="POST" class="p-3 shadow">
+                {%csrf_token %}
+                <div class="form-group" style="margin: 10px;">
+                    <input type="text" class='form-controll' name="task" placeholder="task"><br>
+                </div>
+                <div class="form-group" style="margin: 10px;">
+                    <input type="text" class="form-controll" name="priority" placeholder="Preority"><br>
+                </div>
+                <div class="form-group" style="margin: 10px;">
+                    <input type="date" class="form-controll" name="date" placeholder="date"><br>
+                </div>
+                <input type="submit" class="btn btn-success" style="margin-top: 0px; margin-left: 65px;">
+                
+            </form>
+
+            
+        </div>
+
+        <div class="col-md-6">
+            <h4>Task to be  Completed</h4>
+            {% for i in task1 %}
+           
+            <br>
+
+            {%endfor%}
+        </div>
+
+    </div>
+</div>
+
+
+ 
+{%endblock%}
